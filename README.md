@@ -6,7 +6,7 @@ Breeding bird surveys are an important element of species monitoring on nature r
 - 0-25m
 - 25-100m
 - 100m+
-Birds flying over during the survey are also recorded separately. 
+- Birds flying over during the survey are also recorded separately. 
 
 Due to the recording speed and concentration required for these surveys, Essex Wildlife Trust's ecological monitoring team prefer not to use a GIS app for mapping these results during the surveys themselves. 
 Manually mapping these records afterwards would be extremely time consuming, as a large number of sites have been surveyed multiple times, with multiple distance bands to map per transect section. 
