@@ -18,7 +18,7 @@ def distance_bands(transect, dist_from, dist_to, left=True, right=True):
         Default = True - to create a polygon on the "right" side of the transect (negative buffer)
     :return: dist_from-dist_to_buffer: a geodataframe containing defined distance polygons and attributes from original line
     """
-    buffer = {}
+
     if left:
         lb = transect.buffer(dist_to, single_sided=True)  # create initial left buffer from 0 to dist_to
         lbgdf = gpd.GeoDataFrame(gpd.GeoSeries(lb))  # convert buffer to geodataframe to add attributes
@@ -44,18 +44,30 @@ def distance_bands(transect, dist_from, dist_to, left=True, right=True):
         rightgdf = rightgdf.rename(columns={0: 'geometry'}).set_geometry('geometry')  # set geometry of new geodataframe
         rightbuffer = rbjoin.set_geometry(rightgdf['geometry'])  # copy geometry from subtracted buffer to geodataframe to be exported
     if left and right:
-        buffer = gpd.pd.merge(leftbuffer, rightbuffer, how='outer')
+        buffer = gpd.pd.merge(leftbuffer, rightbuffer, how='outer')  # if there are both left and right buffers created, merge these together
     elif not(left):
-        buffer = rightbuffer
+        buffer = rightbuffer  # if there is only a right buffer created, then return the right buffer only
     else:
-        buffer = leftbuffer
+        buffer = leftbuffer  # if there is only a left buffer created, then return the left buffer only
     return buffer
 
-DB025 = distance_bands(test_transects, 0, 25)
-DB25100 = distance_bands(test_transects, 25, 100)
-DB100300 = distance_bands(test_transects, 100, 300)
+def merge_results(result1, result2, result3):
+    """
+    Merge 3 geodataframes together.
 
-DistanceBandsa = gpd.pd.merge(DB025, DB25100, how='outer')
-DistanceBands = gpd.pd.merge(DistanceBandsa, DB100300, how='outer')
-DistanceBands.to_file('Test_results/DistanceBands_test.shp')
+    :param result1: geodataframe
+    :param result2: geodataframe
+    :param result3: geodataframe
+    :return: mergedGDF: a geodataframe containing data merged from 3 geodataframes
+    """
+    mergedA = gpd.pd.merge(result1, result2, how='outer')
+    mergedGDF = gpd.pd.merge(mergedA, result3, how='outer')
+    return mergedGDF
+
+DB025 = distance_bands(test_transects, 0, 25)  # create a distance band of 0-25m
+DB25100 = distance_bands(test_transects, 25, 100)  # create a distance band of 25-100m
+DB100175 = distance_bands(test_transects, 100, 175)  # create a distance band of 100-175m
+
+DistanceBands = merge_results(DB025, DB25100, DB100175)  # merge the three distance bands created into one geodataframe
+DistanceBands.to_file('Test_results/DistanceBands_test.shp')  # export the merged results to a shapefile
 
