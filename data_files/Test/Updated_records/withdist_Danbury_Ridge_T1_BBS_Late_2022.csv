@@ -1,0 +1,142 @@
+,reserve,transect,observer,date,early.late,cloud,rain,wind,visibility,section,species,L.R,X0.25,X25.100,X100.,flying,notes,distfrom,distto,birdnumber
+1,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,1,Wren,R,1.0,,,,,0,25,1.0
+3,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,1,Blackcap,R,1.0,,,,,0,25,1.0
+6,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Jay,L,1.0,,,,,0,25,1.0
+8,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Chiffchaff,L,1.0,,,,,0,25,1.0
+11,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Blue Tit,L,1.0,,,,,0,25,1.0
+18,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,3,Blackbird,R,1.0,,,,,0,25,1.0
+19,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Wren,L,3.0,,,,,0,25,3.0
+20,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Blackcap,L,1.0,1.0,,,,0,25,1.0
+21,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Woodpigeon,L,1.0,,,,,0,25,1.0
+24,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Wren,R,1.0,,,,,0,25,1.0
+25,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Robin,L,1.0,,,,,0,25,1.0
+26,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Blue Tit,L,1.0,,,,,0,25,1.0
+27,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Long-tailed Tit,L,2.0,,,,,0,25,2.0
+28,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Coal Tit,L,1.0,,,,,0,25,1.0
+30,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Blackcap,L,1.0,,,,,0,25,1.0
+32,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Blue Tit,R,1.0,,,,,0,25,1.0
+34,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,6,Great Tit,L,1.0,,,,,0,25,1.0
+35,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,6,Treecreeper,L,1.0,,,,,0,25,1.0
+36,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,6,Robin,L,1.0,,,,,0,25,1.0
+39,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,7,Robin,L,1.0,,,,,0,25,1.0
+41,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,7,Great Tit,R,1.0,,,,,0,25,1.0
+42,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Robin,R,2.0,1.0,,,,0,25,2.0
+46,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Blue Tit,R,2.0,1.0,,,,0,25,2.0
+47,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Robin,L,1.0,,,,,0,25,1.0
+50,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Wren,R,1.0,,,,,0,25,1.0
+51,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,9,Blue Tit,L,1.0,,,,,0,25,1.0
+52,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,9,Wren,R,1.0,,,,,0,25,1.0
+53,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,10,Goldcrest,R,2.0,,,,,0,25,2.0
+54,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,10,Robin,R,1.0,,,,,0,25,1.0
+55,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,10,Blue Tit,R,1.0,,,,,0,25,1.0
+56,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,10,Robin,L,1.0,,,,,0,25,1.0
+58,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Robin,R,1.0,1.0,,,,0,25,1.0
+59,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Great Tit,L,1.0,,,,,0,25,1.0
+60,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Robin,L,1.0,1.0,,,,0,25,1.0
+64,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Blue Tit,L,1.0,,,,,0,25,1.0
+65,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Robin,L,1.0,,,,,0,25,1.0
+67,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Robin,R,1.0,,,,,0,25,1.0
+69,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Blackcap,L,1.0,,,,,0,25,1.0
+70,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Blackbird,R,2.0,,,,,0,25,2.0
+72,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,13,Robin,L,1.0,,,,,0,25,1.0
+74,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Robin,L,1.0,,,,,0,25,1.0
+76,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Magpie,R,1.0,,,,,0,25,1.0
+77,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Treecreeper,L,1.0,,,,,0,25,1.0
+79,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Woodpigeon,L,2.0,,,,,0,25,2.0
+80,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Great Spotted Woodpecker,L,1.0,,,,,0,25,1.0
+81,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Blue Tit,L,1.0,1.0,,,,0,25,1.0
+83,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Robin,L,1.0,,,,,0,25,1.0
+84,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Wren,R,1.0,,,,,0,25,1.0
+87,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Treecreeper,R,1.0,,,,,0,25,1.0
+89,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Robin,L,1.0,1.0,,,,0,25,1.0
+90,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Blue Tit,R,1.0,,,,,0,25,1.0
+91,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Blackcap,R,1.0,,,,,0,25,1.0
+92,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Carrion Crow,R,1.0,,,,,0,25,1.0
+96,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Great Spotted Woodpecker,R,1.0,,,,,0,25,1.0
+99,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Blue Tit,R,1.0,,,,,0,25,1.0
+104,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Robin,L,1.0,,,,,0,25,1.0
+106,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Robin,R,1.0,,,,,0,25,1.0
+109,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Robin,R,2.0,1.0,,,,0,25,2.0
+110,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Great Tit,R,1.0,,,,,0,25,1.0
+112,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Robin,L,1.0,,,,,0,25,1.0
+113,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Blue Tit,L,1.0,,,,,0,25,1.0
+119,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Wren,R,1.0,,,,,0,25,1.0
+120,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Blackcap,L,1.0,,,,,0,25,1.0
+121,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Blackcap,R,1.0,,,,,0,25,1.0
+122,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Robin,R,1.0,,,,,0,25,1.0
+125,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Blackcap,R,1.0,1.0,,,,0,25,1.0
+127,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Robin,R,1.0,,,,,0,25,1.0
+128,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Wren,L,1.0,1.0,,,,0,25,1.0
+0,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,1,Wren,R,,1.0,,,,25,100,1.0
+2,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,1,Chiffchaff,L,,1.0,,,,25,100,1.0
+4,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,1,Great Tit,L,,1.0,,,,25,100,1.0
+7,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Wren,R,,1.0,,,,25,100,1.0
+9,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Blackbird,L,,1.0,,,,25,100,1.0
+10,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Blackbird,R,,1.0,,,,25,100,1.0
+12,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Woodpigeon,L,,1.0,,,,25,100,1.0
+13,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Wren,R,,1.0,,,,25,100,1.0
+14,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Wren,L,,1.0,,,,25,100,1.0
+15,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Blackbird,L,,1.0,,,,25,100,1.0
+16,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,3,Coal Tit,L,,1.0,,,,25,100,1.0
+17,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,3,Wren,L,,1.0,,,,25,100,1.0
+20,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Blackcap,L,1.0,1.0,,,,25,100,1.0
+22,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Blackbird,L,,1.0,,,,25,100,1.0
+23,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,4,Song Thrush,L,,1.0,,,,25,100,1.0
+29,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Robin,L,,1.0,,,,25,100,1.0
+31,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Robin,R,,1.0,,,,25,100,1.0
+37,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,6,Jay,L,,1.0,,,,25,100,1.0
+38,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,6,Wren,R,,1.0,,,,25,100,1.0
+40,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,7,Robin,R,,1.0,,,,25,100,1.0
+42,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Robin,R,2.0,1.0,,,,25,100,1.0
+43,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Jackdaw,R,,1.0,,,,25,100,1.0
+45,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Great Tit,R,,1.0,,,,25,100,1.0
+46,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Blue Tit,R,2.0,1.0,,,,25,100,1.0
+48,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Woodpigeon,R,,1.0,,,,25,100,1.0
+57,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,10,Chiffchaff,R,,1.0,,,,25,100,1.0
+58,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Robin,R,1.0,1.0,,,,25,100,1.0
+60,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Robin,L,1.0,1.0,,,,25,100,1.0
+61,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Blackbird,R,,1.0,,,,25,100,1.0
+62,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,11,Carrion Crow,R,,1.0,,,,25,100,1.0
+63,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Carrion Crow,L,,1.0,,,,25,100,1.0
+66,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Great Tit,R,,1.0,,,,25,100,1.0
+68,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,12,Woodpigeon,R,,1.0,,,,25,100,1.0
+71,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,13,Blackbird,L,,1.0,,,,25,100,1.0
+73,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Wren,R,,1.0,,,,25,100,1.0
+75,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Great Spotted Woodpecker,L,,1.0,,,,25,100,1.0
+78,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Robin,R,,1.0,,,,25,100,1.0
+81,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Blue Tit,L,1.0,1.0,,,,25,100,1.0
+85,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Stock Dove,R,,1.0,,,,25,100,1.0
+86,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Blackcap,R,,1.0,,,,25,100,1.0
+88,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Chiffchaff,R,,1.0,,,,25,100,1.0
+89,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,15,Robin,L,1.0,1.0,,,,25,100,1.0
+93,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Woodpigeon,R,,1.0,,,,25,100,1.0
+94,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Robin,L,,1.0,,,,25,100,1.0
+95,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Chaffinch,L,,1.0,,,,25,100,1.0
+97,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Jackdaw,R,,1.0,,,,25,100,1.0
+98,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Wren,L,,1.0,,,,25,100,1.0
+100,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Woodpigeon,R,,1.0,,,,25,100,1.0
+101,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,16,Chiffchaff,L,,1.0,,,,25,100,1.0
+102,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Woodpigeon,L,,1.0,,,,25,100,1.0
+103,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Carrion Crow,L,,1.0,,,,25,100,1.0
+105,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Wren,R,,2.0,,,,25,100,2.0
+108,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Magpie,R,,1.0,,,,25,100,1.0
+109,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Robin,R,2.0,1.0,,,,25,100,1.0
+111,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Woodpigeon,R,,1.0,,,,25,100,1.0
+114,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Carrion Crow,L,,1.0,,,,25,100,1.0
+115,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,18,Jackdaw,L,,1.0,,,,25,100,1.0
+116,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Wren,R,,1.0,,,,25,100,1.0
+117,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Woodpigeon,R,,1.0,,,,25,100,1.0
+118,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,19,Great Spotted Woodpecker,L,,1.0,,,,25,100,1.0
+123,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Song Thrush,R,,1.0,,,,25,100,1.0
+124,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Carrion Crow,L,,1.0,,,,25,100,1.0
+125,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Blackcap,R,1.0,1.0,,,,25,100,1.0
+126,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Chiffchaff,L,,1.0,,,,25,100,1.0
+128,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Wren,L,1.0,1.0,,,,25,100,1.0
+129,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Coal Tit,L,,1.0,,,,25,100,1.0
+130,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,20,Great Spotted Woodpecker,L,,1.0,,,,25,100,1.0
+5,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,2,Mistle Thrush,L,,,1.0,,,100,200,1.0
+33,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,5,Carrion Crow,L,,,1.0,,,100,200,1.0
+44,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Woodpigeon,R,,,1.0,,,100,200,1.0
+82,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,14,Stock Dove,L,,,1.0,,,100,200,1.0
+49,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,8,Blackbird,,,,,1.0,,0,0,1.0
+107,Danbury Ridge Transect 1,1,"SAB, CW, CW",19/05/2022,L,3,1,1,1,17,Blackbird,,,,,1.0,,0,0,1.0
