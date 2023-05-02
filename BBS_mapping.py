@@ -1,8 +1,10 @@
 import pandas as pd
 import geopandas as gpd
+from shapely import offset_curve
 from shapely.geometry import Point, LineString
 import random
 import os
+from shapely import wkt
 
 # create a function which defines the distances between which each record should be offset from the walked transect
 def read_dist(records):
@@ -29,7 +31,7 @@ def read_dist(records):
     recordsb['birdnumber'] = recordsb['X25.100']  # copy the survey count value into a new column
     recordsc = records[(records['X100.'] != 'NA')]  # slice dataframe and assign 100-200 value to appropriate rows
     recordsc['distfrom'] = '100'
-    recordsc['distto'] = '200'
+    recordsc['distto'] = '130'
     recordsc['birdnumber'] = recordsc['X100.']  # copy the survey count value into a new column
     recordsd = records[(records['flying'] != 'NA')]  # slice dataframe and assign 0-0 value to appropriate rows
     recordsd['distfrom'] = '0'
@@ -48,7 +50,7 @@ dir_list = os.listdir(my_dir)  # Using os.listdir, create a list of all of the f
 
 for f in dir_list:  # Use the for loop to iterate through the list of files
     records = pd.read_csv(f"data_files/Test/Records/{f}")  # read each csv file in the folder specified above
-    read_dist(records).to_csv(f"data_files/Test/Updated_records/withdist_{f}")  # apply read_dist to files then write to csv
+    read_dist(records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply read_dist to files then write to csv
 
 # create a function to copy the relevant transect geometry into the unmapped records dataframe
 def transect_geom(records, transects):
@@ -71,7 +73,7 @@ def transect_geom(records, transects):
     return mergedrecords  # merge transects and records by matching up reserve name and transect section
 
 
-Transects = gpd.read_file("data_files/Test/BBS_test_transects.shp")  # read shapefile and assign to "transects"
+Transects = gpd.read_file("data_files/Test/BBS_test_transects.shp")  # read shapefile and assign to "Transects"
 
 my_dir2 = "data_files/Test/Updated_records"  # Assign directory to be iterated through to "my_dir2"
 
@@ -79,6 +81,42 @@ dir_list2 = os.listdir(my_dir2)  # Using os.listdir, create a list of all of the
 
 for f in dir_list2:  # Use the for loop to iterate through the list of files
     Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
-    transect_geom(Records, Transects).to_csv(f"data_files/Test/Updated_records/withgeom_{f}")
+    transect_geom(Records, Transects).to_csv(f"data_files/Test/Updated_records/{f}")
     # merge transect geometry to records then write to csv
+
+
+def read_offset(Records):
+    """
+    Given a dataframe containing survey records, distance and side each record should be offset from the original 
+    transect, and linestring geometry, offset each record by a distance as defined within the dataframe.
+
+    :param Records: dataframe
+        CSV file of survey records including the columns "distfrom" (float), "distto" (float), "geometry" (linestring
+        WKT in projected CRS), "L.R" ('L'/'R' indicating side of transect).
+    :return: offset_records
+        Geodataframe with geometry column updated as offset by the appropriate distance on the appropriate side of the
+        original transect line.
+    """
+
+    Records['geometry'] = Records['geometry'].apply(wkt.loads)
+    Records = gpd.GeoDataFrame(Records, crs='epsg:27700')
+    RecordsL = Records.loc[(Records['L.R'] == 'L')]
+    for ind, row in RecordsL.iterrows():
+        fr = Records.loc[ind, 'distfrom']
+        to = Records.loc[ind, 'distto']
+        dist = random.uniform(to, fr)
+        RecordsL.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
+    RecordsR = Records.loc[(Records['L.R'] == 'R')]
+    for ind, row in RecordsR.iterrows():
+        fr = Records.loc[ind, 'distfrom']
+        to = Records.loc[ind, 'distto']
+        dist = -abs(random.uniform(to, fr))
+        RecordsR.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
+    merged = pd.concat([RecordsL, RecordsR])
+    return merged
+
+
+for f in dir_list2:  # Use the for loop to iterate through the list of files
+    Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
+    read_offset(Records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply read_offset and write to csv
 
