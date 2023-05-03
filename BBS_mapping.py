@@ -100,20 +100,17 @@ def read_offset(Records):
 
     Records['geometry'] = Records['geometry'].apply(wkt.loads)
     Records = gpd.GeoDataFrame(Records, crs='epsg:27700')
-    RecordsL = Records.loc[(Records['L.R'] == 'L')]
-    for ind, row in RecordsL.iterrows():
+    for ind, row in Records.loc[(Records['L.R'] == 'L')].iterrows():
         fr = Records.loc[ind, 'distfrom']
         to = Records.loc[ind, 'distto']
         dist = random.uniform(to, fr)
-        RecordsL.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
-    RecordsR = Records.loc[(Records['L.R'] == 'R')]
-    for ind, row in RecordsR.iterrows():
+        Records.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
+    for ind, row in Records.loc[(Records['L.R'] == 'R')].iterrows():
         fr = Records.loc[ind, 'distfrom']
         to = Records.loc[ind, 'distto']
         dist = -abs(random.uniform(to, fr))
-        RecordsR.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
-    merged = pd.concat([RecordsL, RecordsR])
-    return merged
+        Records.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
+    return Records
 
 
 for f in dir_list2:  # Use the for loop to iterate through the list of files
