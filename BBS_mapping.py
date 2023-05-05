@@ -117,3 +117,27 @@ for f in dir_list2:  # Use the for loop to iterate through the list of files
     Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
     read_offset(Records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply read_offset and write to csv
 
+
+def plot_points(Records):
+    """
+    Given a dataframe containing survey records mapped to a line offset the appropriate side/distance from the original
+    transect line, use each record's linestring geometry to plot a point a random distance along the for each record.
+    :param Records: dataframe
+        CSV file containing a "geometry" column (linestring WKT) and any other data for each record
+    :return: Records points
+        Geodataframe with geometry converted from linestring to a single point a random distance along the line, and
+        unrequired columns removed.
+    """
+
+    Records['geometry'] = Records['geometry'].apply(wkt.loads)
+    Records = gpd.GeoDataFrame(Records, crs='epsg:27700')
+    for ind, row in Records.iterrows():
+        pointdist = random.uniform(0.3, 0.7)  # generate a random number to represent a point along the line
+        Records.loc[ind, 'geometry'] = row['geometry'].interpolate(pointdist, normalized=True)
+    Records.drop(columns=["Unnamed: 0.1", "Unnamed: 0.2", "Unnamed: 0", "Shape_Leng", "RESERVE", "SECTION"], inplace=True)
+    return Records
+
+
+for f in dir_list2:  # Use the for loop to iterate through the list of files
+    Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
+    plot_points(Records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply plot_points and write to csv
