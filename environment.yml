@@ -7,5 +7,3 @@ dependencies:
   - geopandas
   - pandas
   - shapely
-  - random
-  - os
