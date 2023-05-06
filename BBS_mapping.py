@@ -13,8 +13,8 @@ from shapely import wkt
 
 # ---------------------------------------------------------------------------------------------------------------------
 # VARIABLES
-# The lines below define variables used at several points within the script, which may be updated if required to apply
-# the script to other directories or data in a different CRS.
+# The lines below define variables used at several points within the script, which may be updated here if required to
+# apply the script to other files/directories or data in a different CRS.
 
 # "BBS_records" is the folder containing the original unmapped records (should only contain the records CSV files)
 BBS_records = "data_files/Test/Records"  # Assign directory to be iterated through to "BBS_records"
@@ -22,13 +22,12 @@ BBS_list = os.listdir(BBS_records)  # Using os.listdir, create a list of all of 
 
 Transects = gpd.read_file("data_files/Test/BBS_test_transects.shp")  # read shapefile and assign to "Transects"
 
-# "Updated_BBS" is the folder where updated records should be saved (should be empty before first running script and
-# intermediate files are overwritten before reaching the end result)
-Updated_BBS = "data_files/Test/Updated_records"  # Assign directory to be iterated through to "Updated_BBS"
-Updated_BBS_list = os.listdir(Updated_BBS)  # Using os.listdir, create a list of all of the files in "Updated_BBS"
-
 MyCRS = 'epsg:27700'  # Define the CRS of the data to ensure geometry column can be read later in the script. For the
 # distance bands to be correctly mapped, this must be a projected CRS.
+
+# "Updated_BBS" is the folder where updated records should be saved
+Updated_BBS = "data_files/Test/Updated_records"  # Assign updated records directory to "Updated_BBS"
+Updated_BBS_list = os.listdir(Updated_BBS)  # Using os.listdir, create a list of all files in "Updated_BBS"
 
 # ---------------------------------------------------------------------------------------------------------------------
 # FUNCTION DEFINITIONS
@@ -68,7 +67,9 @@ def read_dist(records):
     mergedB = pd.concat([mergedA, recordsc])
     mergedC = pd.concat([mergedB, recordsd])
     withdist = mergedC[(mergedC['birdnumber'].notna())]
-    return withdist  # return the new merged dataframe
+    return withdist  # return the new merged dataframe. It is preferable to slice and recombine within this function
+    # because each row in original records may contain more than one bird count (if same species, transect section and
+    # side). This ensures no bird count records are lost in the processing.
 
 
 # transect_geom function:
@@ -80,7 +81,7 @@ def transect_geom(records, transects):
     section in the transects shapefile to add the relevant geometry to the survey records.
 
     :param records: dataframe
-        CSV file of survey records containing the columns "reserve" and "section".
+        Dataframe of survey records containing the columns "reserve" and "section".
     :param transects: shapefile
         Line layer containing the attributes "RESERVE" and "SECTION".
     :return withgeom: The updated geodataframe
@@ -101,24 +102,23 @@ def read_offset(Records):
     transect, and linestring geometry, offset each record by a distance as defined within the dataframe.
 
     :param Records: dataframe
-        CSV file of survey records including the columns "distfrom" (float), "distto" (float), "geometry" (linestring
+        Dataframe of survey records including the columns "distfrom" (float), "distto" (float), "geometry" (linestring
         WKT in projected CRS), "L.R" ('L'/'R' indicating side of transect).
     :return: offset_records
         Geodataframe with geometry column updated as offset by the appropriate distance on the appropriate side of the
         original transect line.
     """
 
-    Records['geometry'] = Records['geometry'].apply(wkt.loads)
-    Records = gpd.GeoDataFrame(Records, crs=MyCRS)
-    for ind, row in Records.loc[(Records['L.R'] == 'L')].iterrows():
-        fr = Records.loc[ind, 'distfrom']
-        to = Records.loc[ind, 'distto']
-        dist = random.uniform(to, fr)
+    Records = gpd.GeoDataFrame(Records, crs=MyCRS)  # read file as geodataframe
+    for ind, row in Records.loc[(Records['L.R'] == 'L')].iterrows():  # apply following code to each row in geodataframe
+        fr = Records.loc[ind, 'distfrom']  # assign row's "distfrom" to "fr"
+        to = Records.loc[ind, 'distto']  # assign row's "distto" to "to"
+        dist = random.uniform(int(to), int(fr))  # use to and fr as integers to offset record within correct distance
         Records.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
-    for ind, row in Records.loc[(Records['L.R'] == 'R')].iterrows():
-        fr = Records.loc[ind, 'distfrom']
-        to = Records.loc[ind, 'distto']
-        dist = -abs(random.uniform(to, fr))
+    for ind, row in Records.loc[(Records['L.R'] == 'R')].iterrows():  # apply following code to each row in geodataframe
+        fr = Records.loc[ind, 'distfrom']  # assign row's "distfrom" to "fr"
+        to = Records.loc[ind, 'distto']  # assign row's "distto" to "to"
+        dist = -abs(random.uniform(int(to), int(fr)))  # use to and fr as negative integers to offset on right hand side
         Records.loc[ind, 'geometry'] = row['geometry'].offset_curve(dist, quad_segs=16, join_style=1, mitre_limit=5.0)
     return Records
 
@@ -130,39 +130,39 @@ def plot_points(Records):
     Given a dataframe containing survey records mapped to a line offset the appropriate side/distance from the original
     transect line, use each record's linestring geometry to plot a point a random distance along the for each record.
     :param Records: dataframe
-        CSV file containing a "geometry" column (linestring WKT) and any other data for each record
+        Dataframe containing a "geometry" column (linestring WKT) and any other data for each record
     :return: Records points
         Geodataframe with geometry converted from linestring to a single point a random distance along the line, and
         unrequired columns removed.
     """
 
-    Records['geometry'] = Records['geometry'].apply(wkt.loads)
-    Records = gpd.GeoDataFrame(Records, crs=MyCRS)
-    for ind, row in Records.iterrows():
-        pointdist = random.uniform(0.3, 0.7)  # generate a random number to represent a point along the line
-        Records.loc[ind, 'geometry'] = row['geometry'].interpolate(pointdist, normalized=True)
-    Records.drop(columns=["Unnamed: 0.1", "Unnamed: 0.2", "Unnamed: 0", "Shape_Leng", "RESERVE", "SECTION"], inplace=True)
+    Records = gpd.GeoDataFrame(Records, crs=MyCRS)  # read file as geodataframe
+    for ind, row in Records.iterrows():  # apply following code to each row in the geodataframe
+        pointdist = random.uniform(0.3, 0.7)  # generate a random number to represent a point along the line.
+        # This can be any number between 0 and 1. 0.3-0.7 selected here to avoid offset_curve's creative "end ticks"
+        Records.loc[ind, 'geometry'] = row['geometry'].interpolate(pointdist, normalized=True)  # plot points on lines
+    Records.drop(columns=["Shape_Leng", "RESERVE", "SECTION"], inplace=True)  # remove unrequired columns
     return Records
 
 
 # ---------------------------------------------------------------------------------------------------------------------
-# APPLICATION OF FUNCTIONS TO RECORDS FILES
+# APPLICATION OF FUNCTIONS TO PLOT ALL RECORDS IN BBS RECORDS FILES
+
+Transects.to_crs(MyCRS)  # ensure the transects shapefile is in the correct projected CRS as defined at top of script
+
 for f in BBS_list:  # Use the for loop to iterate through the list of files
     records = pd.read_csv(f"data_files/Test/Records/{f}")  # read each csv file in the folder specified above
-    read_dist(records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply read_dist to files then write to csv
+    distrecords = read_dist(records)  # apply read_dist to each file
+    transectrecords = transect_geom(distrecords, Transects)  # apply transect_geom to each file
+    offsetrecords = read_offset(transectrecords)  # apply read_offset to each file
+    plot_points(offsetrecords).to_csv(f"data_files/Test/Updated_records/{f}")  # apply plot_points function and write to
+    # csv. Directory can be updated as required and if combining files into one shapefile in next step then the
+    # directory should match that assigned to "Updated_BBS" at top of script.
 
-
-for f in Updated_BBS_list:  # Use the for loop to iterate through the list of files
-    Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
-    transect_geom(Records, Transects).to_csv(f"data_files/Test/Updated_records/{f}")
-    # merge transect geometry to records then write to csv
-
-
-for f in Updated_BBS_list:  # Use the for loop to iterate through the list of files
-    Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
-    read_offset(Records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply read_offset and write to csv
-
-
-for f in Updated_BBS_list:  # Use the for loop to iterate through the list of files
-    Records = pd.read_csv(f"data_files/Test/Updated_records/{f}")  # read each csv file in the folder specified above
-    plot_points(Records).to_csv(f"data_files/Test/Updated_records/{f}")  # apply plot_points and write to csv
+# Merge all mapped records into one shapefile
+df_from_each_file = (pd.read_csv(f"data_files/Test/Updated_records/{f}") for f in Updated_BBS_list)  # read each file
+merged = pd.concat(df_from_each_file, ignore_index=True)  # Concatenate all records using 'pd.concat()'
+merged['geometry'] = merged['geometry'].apply(wkt.loads)  # Ensure the geometry column is being read as WKT
+merged = gpd.GeoDataFrame(merged, crs=MyCRS)  # Convert the merged dataframe to a geodataframe
+merged.to_file("data_files/Test/Combined_records/BBS_2022.shp")  # write the merged geodataframe to a shapefile.
+# Directory can be updated as required but should be a different location to BBS_records or Updated_BBS.
