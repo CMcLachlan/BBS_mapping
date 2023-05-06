@@ -8,11 +8,11 @@ Repeated, standardised surveys enable abundance and diversity of species present
 - 100m+
 - Birds flying over during the survey are also recorded separately. 
 
-Whilst it is valuable to have breeding bird survey records mapped in order to visualise and analyse alongside other spatial data, these records may not be mapped during the survey itself for a variety of reasons. This includes
-Manually mapping these records afterwards would be extremely time consuming, as a large number of sites have been surveyed multiple times, with multiple distance bands to map per transect section. 
+Whilst it is valuable to have breeding bird survey records mapped in order to visualise and analyse alongside other spatial data, these records may not be mapped during the survey itself for a variety of reasons (speed/concentration required during recording making GIS apps unsuitable options, lack of access to GIS licenses). 
+Manually mapping these records afterwards would be extremely time consuming when a large number of sites have been surveyed multiple times, with multiple distance bands to take into account per transect section. 
 
 ## Purpose
-This repository has been created to share a Python program enabling an automated workflow for mapping breeding bird survey (BBS) results, including creating polygons representing the recording distance bands on each side of each transect section, including attributes for each distance band polygon detailing the site name, transect section, "side" and distance band, and using these polygons to plot bird species records from surveys to the appropriate location. 
+This repository has been created to share a Python program enabling an automated workflow for mapping breeding bird survey (BBS) results. Using a shapefile representing each transect section surveyed, and a set of CSV files representing the results from each survey detailing the site name, transect section, "side" and distance band, points are plotted for each record on the correct side and distance from the original transect line. 
 
 ## How to install and use this code
 ### Installations required to get started
@@ -24,3 +24,7 @@ This repository has been created to share a Python program enabling an automated
 ### Running and adapting this code
 
 ### Test data provided
+Test data provided includes: 
+- A shapefile representing a selection of breeding bird survey transects, with "RESERVE" (site) and "SECTION" (numbered section along each transect) attributes
+- Three example results CSV files
+These files are provided within "data_files/Test" of the main branch of the repository. 
