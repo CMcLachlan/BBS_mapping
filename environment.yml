@@ -5,8 +5,5 @@ channels:
 dependencies:
   - python
   - geopandas
-  - cartopy>=0.21
-  - notebook
-  - rasterio
-  - pyepsg
-  - folium
+  - pandas
+  - shapely
