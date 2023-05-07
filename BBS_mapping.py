@@ -150,6 +150,23 @@ def plot_points(Records):
 
 Transects.to_crs(MyCRS)  # ensure the transects shapefile is in the correct projected CRS as defined at top of script
 
+# Uncomment the section below (remove the """ from line 157 and 167) if the error “AttributeError: 'NoneType' object
+# has no attribute 'offset_curve'" is returned. It is likely at least one record has not been attached to a geometry
+# from the transects shapefile due to lack of a matching reserve name. Compare the lists returned to help identify if
+# this is the issue and if so, which reserve has not been found in the transects shapefile.
+"""for f in BBS_list:  # Use the for loop to iterate through the list of files
+    records = pd.read_csv(f"data_files/Test/Records/{f}")
+    Reserves = records.reserve.unique()  # make a list of reserve names from records CSV files
+    AllReserves = []  # start an empty list
+    AllReserves.append(Reserves)  # append the unique reserve names from each file to the list
+    AllReservesList = ",".join(str(x) for x in AllReserves)  # return reserve names as strings
+    print(AllReservesList)  # print the resulting list
+
+TransectReserves = Transects.RESERVE.unique()  # make a list of reserve names from transects shapefile
+TransectReserves.sort()  # sort the reserve names alphabetically
+print("Reserve names from transects shapefile:")
+print(TransectReserves)"""
+
 for f in BBS_list:  # Use the for loop to iterate through the list of files
     records = pd.read_csv(f"data_files/Test/Records/{f}")  # read each csv file in the folder specified above
     distrecords = read_dist(records)  # apply read_dist to each file
