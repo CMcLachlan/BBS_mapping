@@ -150,22 +150,21 @@ def plot_points(Records):
 
 Transects.to_crs(MyCRS)  # ensure the transects shapefile is in the correct projected CRS as defined at top of script
 
-# Uncomment the section below (remove the """ from line 157 and 167) if the error “AttributeError: 'NoneType' object
+# (OPTIONAL IN CASE OF ERROR)
+# Uncomment the section below (remove the """ from line 158 and 167) if the error “AttributeError: 'NoneType' object
 # has no attribute 'offset_curve'" is returned. It is likely at least one record has not been attached to a geometry
-# from the transects shapefile due to lack of a matching reserve name. Compare the lists returned to help identify if
-# this is the issue and if so, which reserve has not been found in the transects shapefile.
-"""for f in BBS_list:  # Use the for loop to iterate through the list of files
-    records = pd.read_csv(f"data_files/Test/Records/{f}")
-    Reserves = records.reserve.unique()  # make a list of reserve names from records CSV files
-    AllReserves = []  # start an empty list
-    AllReserves.append(Reserves)  # append the unique reserve names from each file to the list
-    AllReservesList = ",".join(str(x) for x in AllReserves)  # return reserve names as strings
-    print(AllReservesList)  # print the resulting list
+# from the transects shapefile, due to lack of a matching reserve name. A list of any reserve names lacking a match will
+# be returned, to help identify if this is the issue and if so, which reserve has not been found in the transects file.
+"""AllReserves = []  # start an empty list
+for f in BBS_list:  # Use the for loop to iterate through the list of files
+    records = pd.read_csv(f"data_files/Test/Records/{f}")  # read each file in the BBS_list directory in turn
+    AllReserves.extend(records.reserve.unique())  # make a list of unique reserve names from each 'records' CSV file
 
-TransectReserves = Transects.RESERVE.unique()  # make a list of reserve names from transects shapefile
-TransectReserves.sort()  # sort the reserve names alphabetically
-print("Reserve names from transects shapefile:")
-print(TransectReserves)"""
+TransectReserves = Transects.RESERVE.unique()  # make a list of reserve names from the transects shapefile
+
+missing_transects = [item for item in AllReserves if item not in TransectReserves]  # identify the missing transects
+print("The following reserve names are present in the BBS records but not in the transects shapefile:")
+print(missing_transects)"""
 
 for f in BBS_list:  # Use the for loop to iterate through the list of files
     records = pd.read_csv(f"data_files/Test/Records/{f}")  # read each csv file in the folder specified above
@@ -177,8 +176,8 @@ for f in BBS_list:  # Use the for loop to iterate through the list of files
     # directory should match that assigned to "Updated_BBS" at top of script.
 
 # Merge all mapped records into one shapefile
-df_from_each_file = (pd.read_csv(f"data_files/Test/Updated_records/{f}") for f in Updated_BBS_list)  # read each file
-merged = pd.concat(df_from_each_file, ignore_index=True)  # Concatenate all records using 'pd.concat()'
+all_updated = (pd.read_csv(f"data_files/Test/Updated_records/{f}") for f in Updated_BBS_list)  # read each file
+merged = pd.concat(all_updated, ignore_index=True)  # Concatenate all records using 'pd.concat()'
 merged['geometry'] = merged['geometry'].apply(wkt.loads)  # Ensure the geometry column is being read as WKT
 merged = gpd.GeoDataFrame(merged, crs=MyCRS)  # Convert the merged dataframe to a geodataframe
 merged.to_file("data_files/Test/Combined_records/BBS_2022.shp")  # write the merged geodataframe to a shapefile.
