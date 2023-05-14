@@ -73,7 +73,7 @@ The script’s main dependencies, detailed in the table below, are listed in the
 | ---------- | ------- |
 | geopandas | Reading and writing files | 
 | pandas | Reading and writing files, merging dataframes, returning co-ordinates from a given distance along each record line |
-| shapely | Offsetting transect lines | 
+| shapely | Offsetting transect lines, reading geometry as well-known text | 
 | os | Listing all files in directory to be processed | 
 | random | Generating random numbers between 0 and 1 for plotting points at varying distance along transect section lines, generating random numbers between recording distance band values |
 
