@@ -38,7 +38,7 @@ For example:
 (If desired, you can navigate to the location from file explorer, right-click on the address bar and press “copy address as text”, then paste this into the command prompt, to ensure the location is copied correctly)
 -	Press enter, then type or paste the following command to clone the repository to your chosen location (replace “your_username” with your GitHub user name):
 
-`git clone https://github.com/your_username/egm722.git`
+`git clone https://github.com/your_username/BBS_mapping.git`
 - Press enter. A message should be displayed to indicate that the repository is being cloned and when this has completed. 
 
 ### Create a conda environment for using this code
@@ -73,7 +73,7 @@ The script’s main dependencies, detailed in the table below, are listed in the
 | ---------- | ------- |
 | geopandas | Reading and writing files | 
 | pandas | Reading and writing files, merging dataframes, returning co-ordinates from a given distance along each record line |
-| shapely | Offsetting transect lines, reading geometry as well-known text | 
+| shapely | Offsetting transect lines, reading geometry as well-known text, interpolation | 
 | os | Listing all files in directory to be processed | 
 | random | Generating random numbers between 0 and 1 for plotting points at varying distance along transect section lines, generating random numbers between recording distance band values |
 
