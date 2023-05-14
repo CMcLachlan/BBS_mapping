@@ -62,7 +62,7 @@ Run the script from within the BBS_mapping environment using your integrated dev
 -	Then press “Add interpreter” 
 -	Select “Conda environment” 
 -	As prompted, provide the path to the conda executable and python interpreter which is part of the previously configured BBS_mapping environment. 
--	Conda executable location may vary but should be found in the C:\Users\charl\anaconda3\condabin\conda.bat (or a similar location relative to where Anaconda is installed such as ~\Anaconda3\bin\conda)
+-	Conda executable location may vary but should be found in the ~\anaconda3\condabin\conda.bat (or a similar location relative to where Anaconda is installed such as ~\Anaconda3\bin\conda)
 -	Python interpreter precise location may vary, but should be found relative to Anaconda in e.g. ~/Anaconda3/envs/BBS_mapping/bin/python.exe or similar depending on operating system. 
 -	Press “OK”, then “Create”, then “Create from existing sources” 
 -	Double-click “BBS_mapping.py” which should now be available in the side window of the project, and press “run” or shift+F10 to run the script.  
